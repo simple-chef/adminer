@@ -17,7 +17,7 @@ directory '/var/www/db/plugins' do
 end
 
 # download adminer (should allow selection here)
-remote_file '/var/www/db/adminer.php' do
+remote_file "#{node['adminer']['dir_to_install']}/adminer.php" do
   source 'http://downloads.sourceforge.net/adminer/adminer-4.2.1-mysql-en.php'
   owner 'root'
   group 'root'
@@ -26,7 +26,7 @@ remote_file '/var/www/db/adminer.php' do
 end
 
 # download plugin for plugins
-remote_file '/var/www/db/plugin.php' do
+remote_file "#{node['adminer']['dir_to_install']}/plugin.php" do
   source 'https://raw.github.com/vrana/adminer/master/plugins/plugin.php'
   owner 'root'
   group 'root'
@@ -35,7 +35,7 @@ remote_file '/var/www/db/plugin.php' do
 end
 
 # download plugin
-remote_file '/var/www/db/plugins/tables-filter.php' do
+remote_file "#{node['adminer']['dir_to_install']}plugins/tables-filter.php" do
   source 'https://raw.github.com/vrana/adminer/master/plugins/tables-filter.php'
   owner 'root'
   group 'root'
@@ -44,7 +44,7 @@ remote_file '/var/www/db/plugins/tables-filter.php' do
 end
 
 # prepare index with plugins
-template '/var/www/db/index.php' do
+template "#{node['adminer']['dir_to_install']}/index.php" do
   source 'index.php.erb'
   owner 'root'
   group 'root'

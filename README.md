@@ -1,6 +1,6 @@
 # adminer-cookbook
 
-Installs [adminer](http://www.adminer.org/) with plugins.
+Downloads [adminer](http://www.adminer.org/) with plugins.
 
 ## Supported Platforms
 
