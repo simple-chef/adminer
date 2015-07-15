@@ -8,7 +8,7 @@
 #
 
 # create the directories
-directory '/var/www/db/plugins' do
+directory "#{node['adminer']['dir_to_install']}/plugins" do
   owner 'root'
   group 'root'
   mode '0755'
