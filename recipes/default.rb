@@ -35,7 +35,7 @@ remote_file "#{node['adminer']['dir_to_install']}/plugin.php" do
 end
 
 # download plugin
-remote_file "#{node['adminer']['dir_to_install']}plugins/tables-filter.php" do
+remote_file "#{node['adminer']['dir_to_install']}/plugins/tables-filter.php" do
   source 'https://raw.github.com/vrana/adminer/master/plugins/tables-filter.php'
   owner 'root'
   group 'root'
