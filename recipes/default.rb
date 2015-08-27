@@ -16,9 +16,12 @@ directory "#{node['adminer']['dir_to_install']}/plugins" do
   action :create
 end
 
+versions = node['adminer']['versions_available']
+file_to_download = versions[node['adminer']['version_to_install']]
+
 # download adminer (should allow selection here)
 remote_file "#{node['adminer']['dir_to_install']}/adminer.php" do
-  source 'http://downloads.sourceforge.net/adminer/adminer-4.2.1-mysql-en.php'
+  source file_to_download
   owner 'root'
   group 'root'
   mode '0644'

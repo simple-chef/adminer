@@ -4,7 +4,7 @@ Downloads [adminer](http://www.adminer.org/) with plugins.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+Should work everywhere, tested on ubuntu
 
 ## Attributes
 
@@ -16,11 +16,18 @@ TODO: List your supported platforms.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['adminer']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['adminer']['dir_to_install']</tt></td>
+    <td>String</td>
+    <td>Where to install</td>
+    <td><tt>/var/www/db</tt></td>
   </tr>
+  <tr>
+    <td><tt>['adminer']['version_to_install']</tt></td>
+    <td>String</td>
+    <td>Which version / flavor to install</td>
+    <td><tt>mysql_english</tt></td>
+  </tr>
+
 </table>
 
 ## Usage
@@ -37,6 +44,11 @@ Include `adminer` in your node's `run_list`:
 }
 ```
 
+Setting up a web server is not a part of this cookbook. We strongly suggest using https :).
+
 ## License and Authors
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+License: MIT  
+Author: Mojzis Stupka (stupka@cngroup.dk)
+
+**[CN Group CZ](http://cngroup.dk/)**
