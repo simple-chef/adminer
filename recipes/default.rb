@@ -26,6 +26,7 @@ remote_file "#{node['adminer']['dir_to_install']}/adminer.php" do
   group 'root'
   mode '0644'
   action :create
+  sensitive true
 end
 
 # download plugin for plugins
@@ -35,6 +36,7 @@ remote_file "#{node['adminer']['dir_to_install']}/plugin.php" do
   group 'root'
   mode '0644'
   action :create
+  sensitive true
 end
 
 # download plugin
@@ -44,6 +46,7 @@ remote_file "#{node['adminer']['dir_to_install']}/plugins/tables-filter.php" do
   group 'root'
   mode '0644'
   action :create
+  sensitive true
 end
 
 # prepare index with plugins
@@ -52,6 +55,7 @@ template "#{node['adminer']['dir_to_install']}/index.php" do
   owner 'root'
   group 'root'
   mode '0644'
+  sensitive true
 end
 
 
